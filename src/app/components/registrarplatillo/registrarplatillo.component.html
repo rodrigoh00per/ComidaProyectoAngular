@@ -1,0 +1,64 @@
+<div class="container">
+  <h1>DAR DE ALTA UN PLATILLO</h1>
+
+  <div class="create-success" *ngIf="banderacreate==true">Elemento creado de manera correcta
+    <a [routerLink]="['/detallePlatillo',id_detalle]">Ver detalles</a>
+
+ 
+  </div>
+
+  <form #comidaForm="ngForm" (ngSubmit)="onSubmit(comidaForm)">
+
+    <p>
+      <label for="nombre_platillo">Nombre del Platillo</label>
+      <input #nombre_platillo="ngModel" type="text" id="nombre_platillo" name="nombre_platillo" [(ngModel)]="_comida.nombre_platillo"
+        required />
+      <span class="error-required" *ngIf="nombre_platillo.touched && !nombre_platillo.valid">El nombre del platillo es
+        obligatorio</span>
+    </p>
+
+    <p>
+      <label for="descripcion">Descripción del Platillo</label>
+      <textarea #descripcion="ngModel" name="descripcion" id="descripcion" cols="30" rows="10" [(ngModel)]="_comida.descripcion"
+        required>      </textarea>
+
+      <span class="error-required" *ngIf="descripcion.touched && !descripcion.valid">
+        La descripción del platillo es obligatoria
+      </span>
+    </p>
+
+    <p>
+      <label for="tipo_platillo">Tipo de Platillo</label>
+      <input type="text" id="tipo_platillo" name="tipo_platillo" #tipo_platillo="ngModel" required [(ngModel)]="_comida.tipo_platillo" />
+      <span class="error-required" *ngIf="tipo_platillo.touched && !tipo_platillo.valid">
+        El tipo de platillo es obligatorio
+      </span>
+    </p>
+
+    <p>
+      <label for="tiempo_prep">Tiempo aproximado de preparación</label>
+      <input type="number" id="tiempo_prep" name="tiempo_prep" #tiempo_prep="ngModel" required [(ngModel)]="_comida.tiempo_prep" />
+      <span class="error-required" *ngIf="tiempo_prep.touched && !tiempo_prep.valid">
+        El tiempo de preparación es obligatorio
+      </span>
+    </p>
+
+    <p>
+      <label for="costo_aprox">Costo aproximado del Platillo</label>
+      <input type="text" id="costo_aprox" name="costo_aprox" #costo_aprox="ngModel" required [(ngModel)]="_comida.costo_aprox" />
+      <span class="error-required" *ngIf="costo_aprox.touched && !costo_aprox.valid">
+        El tipo de platillo es obligatorio
+      </span>
+    </p>
+
+    <p>
+      <label for="costo_aprox">Cargar Imagen</label>
+      <input type="file" id="image" name="image" (change)="imageCargadaAlForm($event)" />
+
+    </p>
+
+    <br>
+    <input type="submit" value="Enviar" [disabled]="!comidaForm.valid" />
+  </form>
+
+</div>

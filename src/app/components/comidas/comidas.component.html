@@ -1,0 +1,15 @@
+<div class="container">
+    <ul *ngFor="let tempcomidas of comidas">
+        <p><strong>{{tempcomidas.nombre_platillo}} </strong></p>
+        <div class="image">
+            <a [routerLink]="['/detallePlatillo',tempcomidas._id]"> 
+                <img src="{{url+'getImagenComida/'+tempcomidas.image}}" alt="imagen" *ngIf="tempcomidas.image" />
+                DAR CLICK PARA MAS INFORMACIÓN
+            </a>
+
+           
+        </div>
+    </ul>
+
+
+</div>

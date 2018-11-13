@@ -1,0 +1,299 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+@font-face {
+    font-family: "yanone";
+    src: url('fonts/yanone.ttf');
+}
+
+@font-face {
+    font-family: "finger";
+    src: url('fonts/finger.ttf');
+}
+
+body {
+    font-family: "yanone", Arial, Helvetica;
+    font-size: 20px;
+    background: url('http://foodandtravel.mx/home/wp-content/uploads/2017/08/tacoslapastorFT.jpg');
+    background-position: fixed;
+    /*PARA QUE NO SE NOS MUEVA EL FONDO*/
+}
+
+.clearfix {
+    /*para limpiar los flotados entre los diferentes elementos */
+    float: none;
+    clear: both;
+}
+
+/*BARRA DE NAVEGACION*/
+
+header {
+    /*ocupa el 100% a lo ancho*/
+    width: 100%;
+    height: 70px;
+    background: rgba(53, 103, 164, 0.8);
+    position: fixed;
+    /*si yo le pongo fixed se queda ahi*/
+    display: block;
+    text-transform: uppercase;
+}
+
+header nav ul {
+    display: block;
+    width: 55%;
+    height: inherit;
+    /*con esto digo esta heredado del padre*/
+    margin: 0px auto;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 60px;
+}
+
+header a {
+    height: inherit;
+    display: block;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-decoration: none;
+    color: white;
+    transition: all 300ms;
+}
+
+header nav ul li a:hover
+/*cuando pase por encima de los elementos*/
+
+    {
+    height: 10%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.activadolink {
+    height: 10%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+#logo {
+    font-family: "finger";
+    font-size: 30px;
+}
+
+#logo a {
+    transition: color 500ms, transform 500ms;
+    /*DEFINO LA ANIMACION QUE SE VA A HACER*/
+}
+
+#logo:hover {
+    color: black;
+    transform: scale(1.50, 1.50);
+    /*PARA QUE SE ESCALE Y CREZCA*/
+    background: transparent;
+}
+
+/*CONTENEDOR PRINCIPAL DE LA PAGINA*/
+
+#contentprincipal {
+    border-left: 1px solid #b7b7b7;
+    border-right: 1px solid #b7b7b7;
+    padding-top: 120px;
+    min-height: 700px;
+    height: auto;
+    width: 75%;
+    margin: 0 auto;
+    /*para que se centre*/
+    box-shadow: 0px 0px 40px black;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/*EL FOOTER*/
+
+footer {
+    width: 75%;
+    margin: 0px auto;
+    text-align: center;
+    padding-top: 25px;
+    color: rgb(0, 0, 0, 0.5);
+}
+
+/*ABOUT COMPONENT*/
+
+#title {
+    margin-left: 1%;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+#title h1 {
+    font-family: "finger";
+    font-size: 60px;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 5px;
+}
+
+#title h2 {
+    font-size: 25px;
+    color: gray;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+article.about {
+    width: 70%;
+    margin: 0 auto;
+    text-align: justify;
+    margin-bottom: 20px;
+    font-size: 23px;
+}
+
+.about h2 {
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.about p {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/*SECTION CREATE COMPONENTE*/
+
+.container {
+    padding: 50px;
+    padding-top: 10px;
+}
+
+.container h2 {
+    display: block;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+form {
+    margin-left: 20px;
+    width: 60%;
+}
+
+form label {
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+form input[type="text"], input[type="number"], input[type="email"], textarea {
+    width: 60%;
+    height: 20%;
+    padding: 5px;
+    margin-right: 2px;
+}
+
+form button, input[type="submit"], .boton-eliminar, .boton-editar {
+    color: white;
+    background: rgba(53, 103, 164, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px rgba(0, 0, 0, 0.8);
+    margin-top: 15px;
+    font-size: 17px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.boton-eliminar, .boton-editar {
+    float: left;
+    width: 10%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.boton-eliminar {
+    background-color: red;
+}
+
+.boton-editar {
+    background-color: orange;
+}
+
+.error-required {
+    padding: 5px;
+    background: red;
+    color: white;
+}
+
+form input[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.create-success {
+    margin-left: 50px;
+    background: green;
+    padding: 1px;
+    border-radius: 3px;
+    width: 30%;
+    color: white;
+}
+
+.create-failed {
+    margin-left: 50px;
+    background: red;
+    padding: 1px;
+    border-radius: 3px;
+    width: 30%;
+    color: white;
+}
+
+/*PAGINA DE PROYECTOS*/
+
+.project {
+    list-style: none;
+    display: block;
+    float: left;
+    margin-right: 5%;
+    width: 27%;
+    text-align: center;
+}
+
+.project image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.project img {
+    width: 100%;
+    height: 200px;
+}
+
+.project a {
+    text-decoration: none;
+    color: black;
+}
+
+/*IMAGEN DETAIL*/
+
+.container .imagendetalle {
+    float: left;
+    width: 47%;
+    height: 300px;
+    margin-right: 100px;
+}
+
+.container .data {
+    float: left;
+    width: 42%;
+    margin-left: 30px;
+}

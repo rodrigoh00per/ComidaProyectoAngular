@@ -1,0 +1,21 @@
+<div class="container">
+
+  <div *ngIf="_comida">
+
+    <h1>{{_comida.nombre_platillo}}</h1>
+    <h2>{{_comida.descripcion}}</h2>
+    <h3>{{_comida.tipo_platillo}}</h3>
+    <img src="{{url}}getImagenComida/{{_comida.image}}" />
+    <div *ngIf="banderaeliminar==false">
+      <a class="boton-editar" [routerLink]="['/actualizarPlatillo',_comida._id]">Editar</a>
+      <a class="boton-eliminar" (click)="iraConfirmarEliminar(true)">Eliminar</a>
+
+    </div>
+    <div *ngIf="banderaeliminar==true">
+      <p> ¿Estas seguro de querer eliminar este elemento?</p>
+      <a class="boton-editar" (click)="iraConfirmarEliminar(false)">Cancelar</a>
+      <a class="boton-eliminar" (click)="eliminarComida(_comida._id)">Confirmar</a>
+    </div>
+  </div>
+
+</div>
